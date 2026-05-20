@@ -48,11 +48,18 @@ def menu_principal():
                 tarefas.visualizar_historico()
             case 0:
                 limpar_tela()
-                print(Style.BRIGHT + Fore.RED + '\nEncerrando programa...')
+                print(Style.BRIGHT + '=' * 40)
+                print(Style.BRIGHT + Fore.RED + 'AVISO: Programa está sendo encerrado!'.center(40))
+                print(Style.BRIGHT + '=' * 40)
+                input(Style.BRIGHT + '\nPressione ENTER para concluir o processo...')
                 break
             case _:
-                print(Style.BRIGHT + Fore.RED + '\nOpção inválida! Tente novamente...')
-                input(Style.BRIGHT + '\nPressione ENTER para confirmar...')
+                limpar_tela()
+                print(Style.BRIGHT + '=' * 40)
+                print(Style.BRIGHT + Fore.RED + 'AVISO: Opção inválida! Tente novamente...'.center(40))
+                print(Style.BRIGHT + '=' * 40)
+                input(Style.BRIGHT + '\nPressione ENTER para voltar ao menu...')
+                return menu_principal()
 
 if __name__ == "__main__":
     menu_principal()
