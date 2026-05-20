@@ -18,4 +18,4 @@ def exibir_menu(texto):
     print(Style.BRIGHT + texto.center(40))
     print(Style.BRIGHT + '=' * 40)
 
-exibir_menu('👤 CADASTRO ALUNO(A) 👤')
+exibir_menu('CADASTRO ALUNO(A)')
