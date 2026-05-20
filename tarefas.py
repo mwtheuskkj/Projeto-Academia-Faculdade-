@@ -26,7 +26,7 @@ def cadastrar_aluno():
 
     print(Style.BRIGHT + Fore.GREEN + f'\n- ✅ Aluno(a) {nome_aluno} cadastrado(a) com sucesso!')
     
-    input(Style.BRIGHT + '\nAperte ENTER para voltar ao menu...')
+    input(Style.BRIGHT + '\nPressione ENTER para voltar ao menu...')
 
 def listar_alunos():
     utils.exibir_menu('LISTA DE ALUNOS')
@@ -44,8 +44,7 @@ def listar_alunos():
         print(Style.BRIGHT + f'- Objetivo: {aluno["objetivo"]}')
         print(Style.BRIGHT + f'- Status: {aluno["status"]}')
         print('=' * 40)
-
-    input('\nPressione ENTER para voltar ao menu...')
+    input(Style.BRIGHT + '\nPressione ENTER para voltar ao menu...')
 
 def entrar_fila():
     utils.exibir_menu('ENTRAR NA FILA DE ATENDIMENTO')
@@ -54,7 +53,6 @@ def entrar_fila():
     # adiciona o aluno no FINAL da fila (fifo).
     dados.fila_atendimento.append(nome_atendimento)
     print(Style.BRIGHT +Fore.GREEN + f'\n- {nome_atendimento} foi adicionado(a) à fila!')
-    
     input(Style.BRIGHT + '\nPressione ENTER para voltar ao menu...')
 
 def atender_aluno():
@@ -79,7 +77,7 @@ def registrar_treino():
         input(Style.BRIGHT + '\nPressione ENTER para voltar ao menu...')
         return
     
-    nome_busca = input('Digite o nome do aluno para o check-in: ')
+    nome_busca = input(Style.BRIGHT + 'Digite o nome do aluno para o check-in: ')
     aluno_encontrado = None
 
     # loop para procurar o aluno pelo nome.
@@ -100,7 +98,7 @@ def registrar_treino():
     aluno_encontrado['sessoes'].append(data_treino)
     print(Style.BRIGHT + Fore.GREEN + f'\n- ✅ Check-in realizado com sucesso! Treino do dia {data_treino} adicionado ao histórico.')
 
-    input('\nPressione ENTER para voltar ao menu...')
+    input(Style.BRIGHT + '\nPressione ENTER para voltar ao menu...')
 
 def visualizar_historico():
     utils.exibir_menu('HISTÓRICO DE TREINOS')
@@ -137,4 +135,4 @@ def visualizar_historico():
     
     print('=' * 40)
 
-    input('\nPressione ENTER para voltar ao menu...')
+    input(Style.BRIGHT + '\nPressione ENTER para voltar ao menu...')
