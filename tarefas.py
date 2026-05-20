@@ -24,27 +24,28 @@ def cadastrar_aluno():
 
     dados.lista_aluno.append(novo_aluno)
 
-    print(Style.BRIGHT + Fore.GREEN + f'\n- ✅ Aluno(a) {nome_aluno} Cadastrado(a) Com Sucesso!')
+    print(Style.BRIGHT + Fore.GREEN + f'\n- ✅ Aluno(a) {nome_aluno} cadastrado(a) com sucesso!')
+    
     input(Style.BRIGHT + '\nAperte ENTER para voltar ao menu...')
 
 def listar_alunos():
     utils.exibir_menu('LISTA DE ALUNOS')
 
     if len(dados.lista_aluno) == 0:
-        print(Style.BRIGHT + Fore.RED + '\n- 📭 Nenhum aluno(a) cadastrado no sistema!')
+        print(Style.BRIGHT + Fore.RED + '\n- Nenhum aluno(a) cadastrado no sistema!')
         input(Style.BRIGHT + '\nPressione ENTER para voltar ao menu...')
         return
 
-    # exibir os dados formatados na tela acessando as chaves do dicionário.
+    # aqui vai exibir os dados na tela.
     for aluno in dados.lista_aluno:
-        print(f'- Nome: {aluno['nome']}')
-        print(f'- Modalidade: {aluno['modalidade']}')
-        print(f'- Treinos por Semana: {aluno['dias_semana']}x')
-        print(f'Objetivo: {aluno['objetivo']}')
-        print(f'Status: {aluno['status']}')
+        print(Style.BRIGHT + f'- Nome: {aluno["nome"]}')
+        print(Style.BRIGHT + f'- Modalidade: {aluno["modalidade"]}')
+        print(Style.BRIGHT + f'- Treinos por Semana: {aluno["dias_semana"]}x')
+        print(Style.BRIGHT + f'- Objetivo: {aluno["objetivo"]}')
+        print(Style.BRIGHT + f'- Status: {aluno["status"]}')
         print('=' * 40)
 
-        input('\nPressione ENTER para voltar ao menu...')
+    input('\nPressione ENTER para voltar ao menu...')
 
 def entrar_fila():
     utils.exibir_menu('ENTRAR NA FILA DE ATENDIMENTO')
@@ -53,6 +54,7 @@ def entrar_fila():
     # adiciona o aluno no FINAL da fila (fifo).
     dados.fila_atendimento.append(nome_atendimento)
     print(Style.BRIGHT +Fore.GREEN + f'\n- {nome_atendimento} foi adicionado(a) à fila!')
+    
     input(Style.BRIGHT + '\nPressione ENTER para voltar ao menu...')
 
 def atender_aluno():
@@ -60,18 +62,21 @@ def atender_aluno():
 
     # validar: se a fila estiver vazia não terá ninguém para atender.
     if len(dados.fila_atendimento) == 0:
-        print(Style.BRIGHT + Fore.RED + '\n- 📭 Fila de atendimento vazia!')
+        print(Style.BRIGHT + Fore.RED + '\n- Fila de atendimento vazia!')
+        input(Style.BRIGHT + '\nPressione ENTER para voltar ao menu...')
         return
     
     proximo = dados.fila_atendimento.pop(0)
     print(Style.BRIGHT + f'\n- Atendendo agora: {proximo}')
+    input(Style.BRIGHT + '\nPressione ENTER para voltar ao menu...')
 
 def registrar_treino():
     utils.exibir_menu('REGISTRAR CHECK-IN DE TREINO')
 
     # se não tiver alunos cadastrados irá avisar e sair.
     if len(dados.lista_aluno) == 0:
-        print(Style.BRIGHT + Fore.RED + '\n- 📭 Nenhum aluno cadastrado para registrar treino!')
+        print(Style.BRIGHT + Fore.RED + '\n- Nenhum(a) aluno(a) cadastrado(a) para registrar treino!')
+        input(Style.BRIGHT + '\nPressione ENTER para voltar ao menu...')
         return
     
     nome_busca = input('Digite o nome do aluno para o check-in: ')
@@ -85,20 +90,24 @@ def registrar_treino():
         
     if aluno_encontrado is None:
         print(Style.BRIGHT + Fore.RED + f'\n- ❌ Aluno(a) "{nome_busca}" não foi encontrado(a)!')
+        input(Style.BRIGHT + '\nPressione ENTER para voltar ao menu...')
         return
     
     # a var 'aluno_encontrado' guarda o dicionário daquele aluno específico.
-    print(Style.BRIGHT + f'Aluno selecionado {aluno_encontrado['nome']}')
+    print(Style.BRIGHT + f'Aluno selecionado {aluno_encontrado["nome"]}')
     data_treino = input(Style.BRIGHT + 'Digite a data do treino (ex: 01/01/2026): ')
 
     aluno_encontrado['sessoes'].append(data_treino)
     print(Style.BRIGHT + Fore.GREEN + f'\n- ✅ Check-in realizado com sucesso! Treino do dia {data_treino} adicionado ao histórico.')
 
+    input('\nPressione ENTER para voltar ao menu...')
+
 def visualizar_historico():
     utils.exibir_menu('HISTÓRICO DE TREINOS')
 
     if len(dados.lista_aluno) == 0:
-        print(f'\n- 📭 Nenhum Aluno(a) Cadastrado no Sistema!')
+        print(f'\n- Nenhum(a) aluno(a) cadastrado(a) no sistema!')
+        input(Style.BRIGHT + '\nPressione ENTER para voltar ao menu...')
         return
     
     nome_busca = input(Style.BRIGHT + 'Digite o nome do aluno (histórico): ')
@@ -110,13 +119,15 @@ def visualizar_historico():
             break
     if aluno_encontrado is None:
         print(Style.BRIGHT + Fore.RED + f'\n- ❌ Aluno(a) "{nome_busca}" não foi encontrado(a)!')
+        input(Style.BRIGHT + '\nPressione ENTER para voltar ao menu...')
         return
     
-    utils.exibir_menu(Style.BRIGHT + f'Treinos de {aluno_encontrado['nome']}')
+    utils.exibir_menu(Style.BRIGHT + f'Treinos de {aluno_encontrado["nome"]}')
 
     # validação da pilha: se a lista de sessões estiver vazia.
     if len(aluno_encontrado['sessoes']) == 0:
         print(Style.BRIGHT + Fore.RED + '\n- Este aluno não realizou nenhum treino!')
+        input(Style.BRIGHT + '\nPressione ENTER para voltar ao menu...')
         return
 
     # exibição em lifo: assim lendo a pilha do topo para baixo (no caso mas recente primeiro).
@@ -125,3 +136,5 @@ def visualizar_historico():
         print(Style.BRIGHT + f'- Treino realizado em: {treino}')
     
     print('=' * 40)
+
+    input('\nPressione ENTER para voltar ao menu...')
