@@ -1,4 +1,4 @@
-# 🏋️ Sistema de Gestão de Academia — CLI
+<img width="1810" height="1394" alt="code" src="https://github.com/user-attachments/assets/46508847-52b6-4784-9b7d-93a51a263938" /># 🏋️ Sistema de Gestão de Academia — CLI
 
 Projetado e desenvolvido como projeto acadêmico de conclusão do **1º Semestre** do curso de Ciência da Computação / Análise e Desenvolvimento de Sistemas. 
 
@@ -41,6 +41,10 @@ O objetivo principal deste projeto foi a aplicação prática dos pilares da pro
 * **Modularização & Separação de Conceitos:**
   Divisão da aplicação em módulos distintos para lógica principal (`main.py` / `operacoes.py`), manipulação de memória (`dados.py`) e rotinas reutilizáveis de I/O (`utils.py`).
 
+<img width="1810" height="1394" alt="code" src="https://github.com/user-attachments/assets/eec935a3-3446-41a7-ac48-fcf9ca7dcf4d" />
+<img width="317" height="227" alt="code1" src="https://github.com/user-attachments/assets/080d130f-d3eb-4b44-9d80-aab656ae6817" />
+<img width="425" height="214" alt="code2" src="https://github.com/user-attachments/assets/5bbb9850-040e-43e1-90f6-96262d83fa66" />
+
 ---
 
 ## 📂 Arquitetura do Projeto
@@ -53,6 +57,4 @@ O objetivo principal deste projeto foi a aplicação prática dos pilares da pro
 _____________________________________________________________________________________________
 
 Código por: Matheus A. Antunes Pentogennis'
-
-<img width="1810" height="1394" alt="code" src="https://github.com/user-attachments/assets/95dd0626-4d3a-4664-863f-b29ca6c68af0" />
 
