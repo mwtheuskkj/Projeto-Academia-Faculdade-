@@ -53,3 +53,6 @@ O objetivo principal deste projeto foi a aplicação prática dos pilares da pro
 _____________________________________________________________________________________________
 
 Código por: Matheus A. Antunes Pentogennis'
+
+<img width="1810" height="1394" alt="code" src="https://github.com/user-attachments/assets/95dd0626-4d3a-4664-863f-b29ca6c68af0" />
+
