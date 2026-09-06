@@ -1,33 +1,55 @@
-🏋️ Sistema de Gestão de Academia (Projeto Acadêmico - 1º Semestre)
-Este projeto foi desenvolvido como trabalho de conclusão do 1º semestre da faculdade, com o objetivo de consolidar os conceitos fundamentais da programação estruturada, manipulação de dados e introdução a Estruturas de Dados em Python.
+# 🏋️ Sistema de Gestão de Academia — CLI
 
-O sistema simula o funcionamento do terminal de uma academia, permitindo o cadastro de alunos, gerenciamento da fila de recepção, check-in de treinos e consulta ao histórico de atividades.
+Projetado e desenvolvido como projeto acadêmico de conclusão do **1º Semestre** do curso de Ciência da Computação / Análise e Desenvolvimento de Sistemas. 
 
-🛠️ Tecnologias e Bibliotecas
-Python 3: Linguagem base utilizada na implementação da lógica e estruturas.
-Colorama: Biblioteca utilizada para estilizar a interface de linha de comando (CLI) com cores e formatação textual, tornando a navegação mais amigável.
-Modularização: Organização do projeto em diferentes arquivos (dados.py, utils.py e rotinas principais).
+O projeto consiste em um software de terminal (CLI) em Python que simula o fluxo operacional de uma academia, integrando cadastro de alunos, controle de atendimento recepção, registro de check-ins de treinos e consulta de históricos.
 
-💡 Conceitos de Programação & Estruturas de Dados Aplicados
-Estruturas Primárias (Listas e Dicionários): Mapeamento dos dados do aluno (nome, modalidade, objetivo, status e sessões) em dicionários armazenados dentro de uma lista principal.
-Fila (FIFO - First-In, First-Out): Gerenciamento da chegada de alunos no atendimento via append() e remoção do primeiro da fila com pop(0).
-Pilha (LIFO - Last-In, First-Out): Exibição do histórico de treinos do mais recente ao mais antigo utilizando a função reversed().
-Busca e Trata de Strings: Tratamento de buscas por nome com .lower() para ignorar diferenças entre maiúsculas e minúsculas.
-Validação e Controle de Fluxo: Checagens de segurança para evitar erros ao tentar operar em listas vazias ou buscar registros inexistentes.
+---
 
-🚀 Funcionalidades do Código
-cadastrar_aluno(): Coleta informações do usuário e registra um novo perfil ativo no sistema.
-listar_alunos(): Exibe a lista completa de alunos cadastrados e seus detalhes.
-entrar_fila() e atender_aluno(): Controla a ordem de chegada na recepção utilizando o conceito de fila.
-registrar_treino(): Realiza a busca pelo aluno e registra a data do treino realizado no seu histórico.
-visualizar_historico(): Apresenta a ordem cronológica inversa dos treinos realizados por determinado aluno.
+## 📌 Sumário
+- [Tecnologias Utilizadas](#-tecnologias-utilizadas)
+- [Conceitos de Ciência da Computação Aplicados](#-conceitos-de-ciência-da-computação-aplicados)
+- [Arquitetura do Projeto](#-arquitetura-do-projeto)
+- [Funcionalidades Principais](#-funcionalidades-principais)
+- [Como Executar o Projeto](#-como-executar-o-projeto)
 
-Código por: Matheus A. Antunes Pentogennis
-___________________________________________________________________________________________________________
+---
 
-## Como Rodar o Programa
+## 🛠️ Tecnologias Utilizadas
 
-1. Requisitos: Python instalado na versão 3.10 ou superior.
-2. Biblioteca externa: Este projeto utiliza a biblioteca 'colorama' para estilizar o terminal. Instale a biblioteca rodando o comando no terminal:
+- **[Python 3](https://www.python.org/)** — Linguagem principal do projeto.
+- **[Colorama](https://pypi.org/project/colorama/)** — Estilização visual no terminal (cores, destaques e formatação).
 
-   pip install colorama
+---
+
+## 💡 Conceitos de Ciência da Computação Aplicados
+
+O objetivo principal deste projeto foi a aplicação prática dos pilares da programação estruturada e estruturas de dados fundamentais:
+
+* **Estruturas de Dados Primárias (Dicionários & Listas):**
+  Cada aluno é representado como um **dicionário** contendo chave-valor (`nome`, `modalidade`, `dias_semana`, `objetivo`, `status`, `sessoes`), mantidos dentro de uma **lista global**.
+  
+* **Fila / FIFO (*First-In, First-Out*):**
+  Implementação da fila de atendimento da recepção. O primeiro aluno que entra na fila (`append()`) é o primeiro a ser atendido e removido do fluxo (`pop(0)`).
+
+* **Pilha / LIFO (*Last-In, First-Out*):**
+  O histórico de sessões de treino é inserido ao final da lista de cada aluno. A leitura utiliza o conceito de pilha via `reversed()`, garantindo que o treino mais recentemente registrado apareça no topo da exibição.
+
+* **Tratamento de Strings & Buscas:**
+  Algoritmos de busca linear com conversão *case-insensitive* (`.lower()`) para busca e localização de registros pelo nome do aluno.
+
+* **Modularização & Separação de Conceitos:**
+  Divisão da aplicação em módulos distintos para lógica principal (`main.py` / `operacoes.py`), manipulação de memória (`dados.py`) e rotinas reutilizáveis de I/O (`utils.py`).
+
+---
+
+## 📂 Arquitetura do Projeto
+
+```text
+├── main.py          # Ponto de entrada do sistema e controle do menu principal
+├── tarefas.py       # Lógica das funções de negócio (cadastro, fila, treino, histórico)
+├── dados.py         # Módulo responsável pelo armazenamento de dados em memória
+└── utils.py         # Funções utilitárias (exibição de telas, leitura e validação de inputs)
+_____________________________________________________________________________________________
+
+Código por: Matheus A. Antunes Pentogennis'
