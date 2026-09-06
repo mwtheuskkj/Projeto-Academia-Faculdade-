@@ -1,4 +1,4 @@
-<img width="1810" height="1394" alt="code" src="https://github.com/user-attachments/assets/46508847-52b6-4784-9b7d-93a51a263938" /># 🏋️ Sistema de Gestão de Academia — CLI
+# 🏋️ Sistema de Gestão de Academia — CLI
 
 Projetado e desenvolvido como projeto acadêmico de conclusão do **1º Semestre** do curso de Ciência da Computação / Análise e Desenvolvimento de Sistemas. 
 
@@ -41,9 +41,9 @@ O objetivo principal deste projeto foi a aplicação prática dos pilares da pro
 * **Modularização & Separação de Conceitos:**
   Divisão da aplicação em módulos distintos para lógica principal (`main.py` / `operacoes.py`), manipulação de memória (`dados.py`) e rotinas reutilizáveis de I/O (`utils.py`).
 
-<img width="1810" height="1394" alt="code" src="https://github.com/user-attachments/assets/eec935a3-3446-41a7-ac48-fcf9ca7dcf4d" />
-<img width="317" height="227" alt="code1" src="https://github.com/user-attachments/assets/080d130f-d3eb-4b44-9d80-aab656ae6817" />
-<img width="425" height="214" alt="code2" src="https://github.com/user-attachments/assets/5bbb9850-040e-43e1-90f6-96262d83fa66" />
+<img width="1810" height="1394" alt="code" src="https://github.com/user-attachments/assets/30ccd835-f3a3-49ff-bd83-00bb85e2cf6c" />
+<img width="317" height="227" alt="code1" src="https://github.com/user-attachments/assets/5daae4f8-d84c-47c3-9815-4fe6167420c2" />
+<img width="425" height="214" alt="code2" src="https://github.com/user-attachments/assets/bacb1d4a-f3a7-4ccc-ae10-321f06b8c2a0" />
 
 ---
 
@@ -51,10 +51,6 @@ O objetivo principal deste projeto foi a aplicação prática dos pilares da pro
 
 ```text
 ├── main.py          # Ponto de entrada do sistema e controle do menu principal
-├── tarefas.py       # Lógica das funções de negócio (cadastro, fila, treino, histórico)
+├── operacoes.py     # Lógica das funções de negócio (cadastro, fila, treino, histórico)
 ├── dados.py         # Módulo responsável pelo armazenamento de dados em memória
 └── utils.py         # Funções utilitárias (exibição de telas, leitura e validação de inputs)
-_____________________________________________________________________________________________
-
-Código por: Matheus A. Antunes Pentogennis'
-
